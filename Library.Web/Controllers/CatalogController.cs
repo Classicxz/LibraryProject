@@ -35,12 +35,20 @@ namespace Library.Web.Controllers {
             public IActionResult Detail(int id) {
                 var asset = _assets.GetById(id);
                 var model = new AssetDetailModel {
-                    AssetIndexListingModel = id,
-                    TypeFilterAttribute = asset.Title,
+                    AssetId = id,
+                    Title = asset.Title,
                     Year = asset.Year,
                     Cost = asset.Cost,
-                    StatusCode = asset.Status.Name,
-                }
+                    Status = asset.Status.Name,
+                    ImageUrl = asset.ImageUrl,
+                    AuthorOrDirector = _assets.GetAuthorOrDirector(id),
+                    CurrentLocation = _assets.GetCurrentLocation(id).Name,
+                    DeweyCallNumber = _assets.GetDeweyIndex(id),
+                    ISBN = _assets.GetIsbn(id)
+
+                };
+
+                return View(model);
             }
     }
 }

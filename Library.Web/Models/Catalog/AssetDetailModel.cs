@@ -5,15 +5,15 @@ using System.Threading.Tasks;
 using Library.Data.Models;
 
 
-namespace Library.models.Catalog {
+namespace Library.Web.Models.Catalog {
 //Things to display on asset detail page
     public class AssetDetailModel {
         public int AssetId {get; set;}
         public string Title {get; set;}
-        public string AuthorOrDirecotr {get; set;}
+        public string AuthorOrDirector {get; set;}
         public string Type {get; set;}
         public int Year {get; set;}
-        public int ISBN {get; set;}
+        public string ISBN {get; set;}
 
         public string DeweyCallNumber {get; set;}
         public string Status {get; set;}

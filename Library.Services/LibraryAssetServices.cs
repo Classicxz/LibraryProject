@@ -63,7 +63,9 @@ namespace Library.Services
 
         public string GetIsbn(int id)
         {
-            throw new NotImplementedException();
+            if (_context.Books.Any(book => book.Id == id)) {
+                return _context.Books.First(book => book.Id ==id).ISBN;
+            } else return "";
         }
 
         public string GetTitle(int id)
