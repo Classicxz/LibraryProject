@@ -31,5 +31,16 @@ namespace Library.Web.Controllers {
             };
             return View(model);
             }
+
+            public IActionResult Detail(int id) {
+                var asset = _assets.GetById(id);
+                var model = new AssetDetailModel {
+                    AssetIndexListingModel = id,
+                    TypeFilterAttribute = asset.Title,
+                    Year = asset.Year,
+                    Cost = asset.Cost,
+                    StatusCode = asset.Status.Name,
+                }
+            }
     }
 }
