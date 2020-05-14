@@ -45,7 +45,6 @@ namespace Library.Web.Controllers {
                     CurrentLocation = _assets.GetCurrentLocation(id).Name,
                     DeweyCallNumber = _assets.GetDeweyIndex(id),
                     ISBN = _assets.GetIsbn(id)
-
                 };
 
                 return View(model);
