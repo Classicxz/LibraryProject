@@ -1,8 +1,21 @@
 @model Library.Web.Models.Catalog.AssetDetailModel
 
+
+<!--I NEED THIS THIS in order for formatting rows and columns-->
+@section Scripts{
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+}
+
+@section Styles{
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+}
+<!--Remember to have this in other files for bootstrap jazz-->
+
 <div class="container">
     <div class="page-header clearfix detailHeading">
-        <h2 class ="text-muted">View Library Item </h2>
+        <h2 class ="text-muted">Library Item Details</h2>
     </div>
 
 
@@ -15,7 +28,7 @@
                 </div>
             </div>
         
-            <div class="col-md-4">
+            <div class="col-md-4 detailInfo">
                 <p id="itemTitle">@Model.Title</p>
                 <p id="itemAuthor">@Model.AuthorOrDirector</p>
                 <p id="itemStatus">@Model.Status</p>
@@ -58,5 +71,5 @@
                 </table>
             </div>
         </div>
-
+    </div>
 </div>
