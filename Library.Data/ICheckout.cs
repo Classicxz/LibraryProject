@@ -11,7 +11,7 @@ namespace Library.Data {
         void CheckOutItem(int assetId, int libraryCardId);
         void CheckInItem(int assetId, int libraryCardId);
         IEnumerable<CheckoutHistory> GetCheckoutHistory(int id);
-
+        string GetCurrentCheckoutPatron(int assetId);
         void PlaceHold(int assetId, int libraryCardId);
         string GetCurrecntHoldPatronName(int id);
 
