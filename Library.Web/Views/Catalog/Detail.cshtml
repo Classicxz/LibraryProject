@@ -83,12 +83,13 @@
                         <th>Date Loaned</th>
                         <th>Date Returned</th>
                         <th>Card Id</th>
-                        <th></th>
+                       
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var checkout in @Model.CheckoutHistory)
-                    {
+                    @{ if(@Model.CheckoutHistory != null) {
+                         foreach (var checkout in @Model.CheckoutHistory)
+                        {
                         <tr>
                             <td>
                                 @checkout.CheckedOut
@@ -97,9 +98,11 @@
                                 @checkout.CheckedIn
                             </td>
                             <td>
-                                @checkout.LibraryCard.Id
+                                @checkout.Id
                             </td>
                         </tr>
+                        }
+                    }
                     }
                 </tbody>
             </table>

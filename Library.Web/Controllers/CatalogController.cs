@@ -54,11 +54,16 @@ namespace Library.Web.Controllers {
                     CurrentLocation = _assets.GetCurrentLocation(id).Name,
                     DeweyCallNumber = _assets.GetDeweyIndex(id),
                     ISBN = _assets.GetIsbn(id),
-                    LatestCheckout =_checkouts.GetLastestCheckout(id),
+                    LatestCheckout =_checkouts.GetLatestCheckout(id),
                     CurrentHolds = currentHolds
                 };
 
                 return View(model);
             }
+    
+        public IActionResult Checkout(int id) {
+
+            }
     }
 }
+        

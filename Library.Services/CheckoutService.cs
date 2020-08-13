@@ -5,7 +5,7 @@ using Library.Data.Models;
 using Library.Services;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
-using Library.Data.Models;
+
 
 namespace Library.Services {
     public class CheckoutService : ICheckout {
@@ -38,7 +38,7 @@ namespace Library.Services {
                 .Where(h => h.LibraryAsset.Id == assetId);
             
             if (currentHolds.Any()) {
-                CheckoutToEarliestHold(assetId, CurrentHolds);
+                CheckoutToEarliestHold(assetId, currentHolds);
             }
 
             UpdateAssetStatus(assetId, "Available");

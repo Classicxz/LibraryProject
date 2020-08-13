@@ -23,7 +23,7 @@ namespace Library.Web.Models.Catalog {
 
         public string PatronName  {get; set;}
         public Checkout LatestCheckout  {get; set;}
-        public IEnumerable<CheckoutHistory> CHeckoutHistory {get; set;}
+        public IEnumerable<CheckoutHistory> CheckoutHistory {get; set;}
         public IEnumerable<AssetHoldModel> CurrentHolds {get; set;}
 
     }
