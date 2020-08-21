@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Library.Data;
 using Library.Web.Models.Catalog;
+using Library.Web.Models.CheckoutModels;
 
 
 namespace Library.Web.Controllers {
@@ -28,10 +29,10 @@ namespace Library.Web.Controllers {
                     DeweyCallNumber = _assets.GetDeweyIndex(result.Id)
                 });
             
-            var model = new AssetIndexModel() {
-                Assets = listingResult
-            };
-            return View(model);
+                var model = new AssetIndexModel() {
+                    Assets = listingResult
+                };
+                return View(model);
             }
 
             public IActionResult Detail(int id) {
@@ -62,8 +63,18 @@ namespace Library.Web.Controllers {
             }
     
         public IActionResult Checkout(int id) {
-
+                
+                var asset = _assets.GetById(id);
+                
+                var model = new CheckoutModel {
+                    AssetId = id,
+                    ImageUrl = asset.Title,
+                    LibraryCardId = "",
+                    IsCheckedOut = _checkouts.IsCheckedOut(id)
+                };
+                return View(model);
             }
+            
     }
 }
         

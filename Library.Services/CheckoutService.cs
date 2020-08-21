@@ -106,7 +106,7 @@ namespace Library.Services {
             return now.AddDays(30);
         }
 
-        private bool IsCheckedOut(int assetId) {
+        public bool IsCheckedOut(int assetId) {
             var isCheckedOut = _context.Checkouts
             .Where(co =>co.LibraryAsset.Id == assetId)
             .Any();
@@ -281,6 +281,8 @@ namespace Library.Services {
                 .Include (c => c.LibraryCard)
                 .FirstOrDefault(c => c.LibraryAsset.Id == assetId);
         }
+
+       
     }
 
 }
